@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Demo - at.js</title>
+  </head>
+  <body>
+    <div id="buttons">
+      <button id="hide">Hide block</button><br>
+      <button id="show">Show block</button><br>
+      <button id="toggle">Toggle block</button><br>
+      <button id="html">Change content</button><br>
+      <button id="color">Change color</button><br>
+      <button id="bgColor">Change background color</button><br>
+      <button id="width">Change width</button><br>
+      <button id="height">Change height</button><br>
+      <button id="size">Change width AND height!!! :D</button><br>
+      <button id="fontSize">Change font size</button><br>
+      <button id="margin">Set some margins</button><br>
+      <button id="padding" class="toggle">Set padding</button><br>
+      <button id="mouseover" class="toggle">Change background color on mouseover</button><br>
+      <button id="mouseout" class="toggle">Change it again on mouseout</button><br><br>
+      <button id="toggleStuff">Hide/show some stuff (using classes)</button><br><br>
+    </div>
+    
+    <div id="test">Test block</div>
+    <br>
+    <div class="stuff">1</div><br>
+    <div class="stuff">2</div><br>
+    <div class="stuff">3</div>
+
+    <script type="text/javascript" src="at.js"></script>
+    <script type="text/javascript">
+      at('#test').color('white').size(100,100).bgColor('royalblue');
+      at('.stuff').size(100,100).bgColor('#FFDB4C').hide();
+
+      at('#hide').click(function() {
+        at('#test').hide();
+      });
+      at('#show').click(function() {
+        at('#test').show();
+      });
+      at('#toggle').click(function() {
+        at('#test').toggle();
+      });
+      at('#html').click(function() {
+        at('#test').html('Yandex');
+      });
+      at('#color').click(function() {
+        at('#test').color('#F00');
+      });
+      at('#bgColor').click(function() {
+        at('#test').bgColor('#EEE');
+      });
+      at('#width').click(function() {
+        at('#test').width(Math.random() * 300 + 100);
+      });
+      at('#height').click(function() {
+        at('#test').height(Math.random() * 300 + 100);
+      });
+      at('#size').click(function() {
+        at('#test').size(Math.random() * 200 + 200, Math.random() * 300 + 100);
+      });
+      at('#fontSize').click(function() {
+        at('#test').fontSize(Math.random() * 90 + 10);
+      });
+      at('#margin').click(function() {
+        at('#test').margin(Math.random() * 90 + 10, Math.random() * 90 + 10, Math.random() * 90 + 10, Math.random() * 90 + 10);
+      });
+      at('#padding').click(function() {
+        at('#test').padding(Math.random() * 90 + 10, Math.random() * 90 + 10, Math.random() * 90 + 10, Math.random() * 90 + 10);
+      });
+      at('#mouseover').click(function() {
+        at('#test').mouseover(function() {
+          at('#test').bgColor('#FFDB4C');
+        });
+      });
+      at('#mouseout').click(function() {
+        at('#test').mouseout(function() {
+          at('#test').bgColor('#333');
+        });
+      });
+      at('#toggleStuff').click(function() {
+        at('.stuff').toggle();
+      })
+    </script>
+  </body>
+</html>
